@@ -130,8 +130,6 @@ class ForceDownloadPath(_PluginBase):
             path_obj = Path(path)
             if not path_obj.exists():
                 logger.info(f"强制使用下载路径: {path}")
-            elif not path_obj.is_dir():
-                logger.warning(f"用户 {username} 的下载路径不是目录: {path}")
 
     @eventmanager.register(ChainEventType.ResourceDownload)
     def intercept_download(self, event: Event) -> Event:
