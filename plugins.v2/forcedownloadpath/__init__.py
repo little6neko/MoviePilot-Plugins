@@ -171,10 +171,6 @@ class ForceDownloadPath(_PluginBase):
             if not path_obj.exists():
                 logger.info(f"[用户目录配置] 强制使用下载路径: {user_download_path}")
 
-            if not path_obj.is_dir():
-                logger.error(f"[用户目录配置] 路径不是目录: {user_download_path}")
-                return event
-
             # 根据媒体信息和用户配置构建带分类的完整路径
             final_download_path = user_download_path
             media_info = None
