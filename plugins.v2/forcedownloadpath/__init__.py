@@ -10,19 +10,19 @@ from app.schemas.event import ResourceDownloadEventData
 
 class UserDownloadPath(_PluginBase):
     # 插件名称
-    plugin_name = "用户目录配置"
+    plugin_name = "强制下载目录"
     # 插件描述
-    plugin_desc = "为不同用户设置不同的下载目录"
+    plugin_desc = "强制下载目录"
     # 插件图标
-    plugin_icon = "https://raw.githubusercontent.com/DzAvril/MoviePilot-Plugins/main/icons/userdownloadpath.png"
+    plugin_icon = "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/userdownloadpath.png"
     # 插件版本
-    plugin_version = "1.1"
+    plugin_version = "1.0"
     # 插件作者
-    plugin_author = "DzAvril"
+    plugin_author = "little6neko"
     # 作者主页
-    author_url = "https://github.com/DzAvril"
+    author_url = "https://github.com/little6neko"
     # 插件配置项ID前缀
-    plugin_config_prefix = "userdownloadpath"
+    plugin_config_prefix = "forcedownloadpath"
     # 加载顺序
     plugin_order = 1
     # 可使用的用户级别
