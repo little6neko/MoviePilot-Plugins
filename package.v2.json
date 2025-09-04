@@ -4,8 +4,8 @@
         "description": "为不同用户设置不同的下载目录",
         "labels": "下载",
         "version": "1.1",
-        "icon": "https://raw.githubusercontent.com/DzAvril/MoviePilot-Plugins/main/icons/userdownloadpath.png",
-        "author": "DzAvril",
+        "icon": "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/userdownloadpath.png",
+        "author": "little6neko",
         "level": 1,
         "v2": true,
         "history": {
