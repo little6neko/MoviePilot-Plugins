@@ -8,13 +8,13 @@ from app.schemas.types import ChainEventType
 from app.schemas.event import ResourceDownloadEventData
 
 
-class UserDownloadPath(_PluginBase):
+class ForceDownloadPath(_PluginBase):
     # 插件名称
     plugin_name = "强制下载目录"
     # 插件描述
     plugin_desc = "强制下载目录"
     # 插件图标
-    plugin_icon = "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/userdownloadpath.png"
+    plugin_icon = "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/forcedownloadpath.png"
     # 插件版本
     plugin_version = "1.0"
     # 插件作者
