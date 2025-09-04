@@ -130,8 +130,6 @@ class UserDownloadPath(_PluginBase):
             path_obj = Path(path)
             if not path_obj.exists():
                 logger.info(f"强制使用下载路径: {path}")
-                break
-                logger.warning(f"用户 {username} 的下载路径不存在: {path}")
             elif not path_obj.is_dir():
                 logger.warning(f"用户 {username} 的下载路径不是目录: {path}")
 
@@ -174,9 +172,6 @@ class UserDownloadPath(_PluginBase):
             path_obj = Path(user_download_path)
             if not path_obj.exists():
                 logger.info(f"[用户目录配置] 强制使用下载路径: {user_download_path}")
-                break
-                logger.error(f"[用户目录配置] 路径不存在: {user_download_path}")
-                return event
 
             if not path_obj.is_dir():
                 logger.error(f"[用户目录配置] 路径不是目录: {user_download_path}")
