@@ -8,13 +8,13 @@ from app.schemas.types import ChainEventType
 from app.schemas.event import ResourceDownloadEventData
 
 
-class ForceDownloadPath(_PluginBase):
+class FixDownloadPath(_PluginBase):
     # 插件名称
-    plugin_name = "强制下载目录"
+    plugin_name = "修正下载目录"
     # 插件描述
-    plugin_desc = "强制下载目录"
+    plugin_desc = "MoviePilot下载目录映射和下载器不一致时使用，修改发送到下载器的下载目录，插件修改自DzAvril"
     # 插件图标
-    plugin_icon = "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/forcedownloadpath.png"
+    plugin_icon = "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/fixdownloadpath.png"
     # 插件版本
     plugin_version = "1.0"
     # 插件作者
@@ -22,7 +22,7 @@ class ForceDownloadPath(_PluginBase):
     # 作者主页
     author_url = "https://github.com/little6neko"
     # 插件配置项ID前缀
-    plugin_config_prefix = "forcedownloadpath"
+    plugin_config_prefix = "fixdownloadpath"
     # 加载顺序
     plugin_order = 1
     # 可使用的用户级别
@@ -230,7 +230,10 @@ class ForceDownloadPath(_PluginBase):
         try:
             # 一级目录：按媒体类型分类（电影/电视剧）
             if enable_type_folder and hasattr(media_info, 'type') and media_info.type:
-                download_dir = download_dir / media_info.type.value
+                if media_info.type.value == "电影":
+                    download_dir = download_dir / "movie"
+                elif media_info.type.value == "电视剧":
+                    download_dir = download_dir / "tv"
 
             # 二级目录：按媒体类别分类（如动漫、纪录片等）
             if enable_category_folder and hasattr(media_info, 'category') and media_info.category:
@@ -365,7 +368,7 @@ class ForceDownloadPath(_PluginBase):
                                         'props': {
                                             'type': 'info',
                                             'variant': 'tonal',
-                                            'text': '使用说明：\n1. 插件会拦截所有下载请求，根据用户身份设置不同的下载路径\n2. 优先匹配用户名，其次匹配用户ID\n3. 支持两种配置格式：简单格式和扩展格式\n4. 扩展格式中，1表示启用，0表示禁用目录分类\n5. 用户级别配置优先于插件默认配置\n6. 如果用户已指定自定义下载路径，插件不会覆盖\n7. 请确保所有路径都存在且可写'
+                                            'text': '使用说明：\n1. 插件会拦截所有下载请求，根据用户身份设置不同的下载路径\n2. 不会判断路径的有效性\n3. 类型分类写死:电影 -> movie, 电视剧 -> tv'
                                         }
                                     }
                                 ]

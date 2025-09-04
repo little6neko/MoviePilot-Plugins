@@ -1,15 +1,15 @@
 {
-    "ForceDownloadPath": {
-        "name": "强制下载目录",
-        "description": "强制下载目录",
+    "FixDownloadPath": {
+        "name": "修正下载目录",
+        "description": "MoviePilot下载目录映射和下载器不一致时使用，修改发送到下载器的下载目录，插件修改自DzAvril",
         "labels": "下载",
         "version": "1.0",
-        "icon": "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/forcedownloadpath.png",
+        "icon": "https://raw.githubusercontent.com/little6neko/MoviePilot-Plugins/main/icons/fixdownloadpath.png",
         "author": "little6neko",
         "level": 1,
         "v2": true,
         "history": {
-            "v1.0": "新建"
+            "v1.0": "简单实现"
         }
     }
 }
